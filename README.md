@@ -11,3 +11,4 @@ You uplode your icon in it and caop the link to use in dashboard
 3. use the [icon-store compose.yaml] on App Store → "Install a Customized App" → Docker Compose tab
 4. w8
 5. enjoy
+#Shadow out
