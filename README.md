@@ -12,4 +12,8 @@ You uplode your icon in it and caop the link to use in dashboard
 4. w8
 5. enjoy
 
-# Shadow out
+## Offline use
+
+Fonts are bundled locally (public/fonts), so the UI loads with no internet.
+Internet is only needed once, on first start, to pull the node image and run npm install.
+After that, everything works on your LAN without internet.

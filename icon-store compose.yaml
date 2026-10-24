@@ -1,0 +1,50 @@
+name: icon-store
+services:
+  icon-store:
+    cpu_shares: 90
+    command:
+      - sh
+      - -c
+      - test -d node_modules || npm install --omit=dev --no-audit --no-fund;
+        node server.js
+    container_name: icon-store
+    deploy:
+      resources:
+        limits:
+          memory: 12440670208
+        reservations:
+          devices: []
+    environment:
+      - ADMIN_KEY=
+      - DATA_DIR=/app/data
+      - PORT=3000
+    image: node:20-alpine
+    labels:
+      icon: https://icon.casaos.io/main/all/icon-store.png
+    ports:
+      - target: 3000
+        published: "3011"
+        protocol: tcp
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        source: /DATA/AppData/icon-store
+        target: /app
+    working_dir: /app
+    devices: []
+    cap_add: []
+    network_mode: bridge
+    privileged: false
+x-casaos:
+  author: self
+  category: self
+  hostname: ""
+  icon: https://icon.casaos.io/main/all/icon-store.png
+  index: /
+  is_uncontrolled: false
+  port_map: "3011"
+  scheme: http
+  store_app_id: icon-store
+  title:
+    custom: ""
+    en_us: icon-store
